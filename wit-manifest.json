@@ -10,7 +10,7 @@
         "source": "git@github.com:sifive/chisel3-wake.git"
     },
     {
-        "commit": "6f9a485596ad69014390058617a6c2f309092c4d",
+        "commit": "d249b1cb311f5a5585b8fccf63a73c2c3e51fb23",
         "name": "chisel-iotesters-wake",
         "source": "git@github.com:sifive/chisel-iotesters-wake.git"
     }
