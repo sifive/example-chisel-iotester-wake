@@ -30,7 +30,7 @@ sudo dpkg -i wake_0.15.0-1_amd64.deb
 
 ** Setup environment variables
 #+BEGIN_SRC shell
-export WAKE_PATH=</path/to/java>
+export WAKE_PATH=</path/to/java>:<path/to/protoc>
 export PATH=</path/to/wit>:</path/to/java>:$PATH
 #+END_SRC
 
@@ -48,7 +48,7 @@ wake --init .
 
 ** Run the project
 #+BEGIN_SRC shell
-wake 'runTest "syntax.NullTester"'
+wake 'runScalaTest testExampleChiselWake "syntax.NullTester"'
 #+END_SRC
 
 ** Try different error types
