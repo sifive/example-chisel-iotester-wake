@@ -15,5 +15,6 @@ class Null extends Module {
   val e = io.a - io.b
   val cc = RegNext(d * e)
   io.c := cc
+  val dd = Mux(VecInit(d.asBools)(0), e, cc)
   printf(p"io.c = ${io.c}\n")
 }
