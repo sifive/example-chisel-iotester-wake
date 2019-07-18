@@ -6,12 +6,22 @@
     },
     {
         "commit": "258e0bd41ddc8811725d51192a8fffb133b6f1c8",
-        "name": "chisel3-wake",
-        "source": "git@github.com:sifive/chisel3-wake.git"
+        "name": "api-chisel3-sifive",
+        "source": "git@github.com:sifive/api-chisel3-sifive.git"
     },
     {
-        "commit": "d249b1cb311f5a5585b8fccf63a73c2c3e51fb23",
-        "name": "chisel-iotesters-wake",
-        "source": "git@github.com:sifive/chisel-iotesters-wake.git"
+        "commit": "72b5b7eabbbb1043a49744e613e8a7a43e0430d4",
+        "name": "api-chisel3testers-sifive",
+        "source": "git@github.com:sifive/api-chisel3testers-sifive.git"
+    },
+    {
+        "commit": "75be4bd9b105d3478a4f09205224c280859137f0",
+        "name": "chisel3",
+        "source": "git@github.com:freechipsproject/chisel3.git"
+    },
+    {
+        "commit": "7bdf1fdb5bfd3c882297cb66427d328ee29001a6",
+        "name": "firrtl",
+        "source": "git@github.com:freechipsproject/firrtl.git"
     }
 ]
