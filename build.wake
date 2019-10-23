@@ -6,7 +6,7 @@ global def exampleChiselWake =
 
 global def testExampleChiselWake =
   makeScalaModuleFromJSON here "test-example-chisel-wake"
-  | setScalaModuleDeps (exampleChiselWake, chiselIotestersScalaModule, Nil)
+  | setScalaModuleDeps (exampleChiselWake, chiselIotestersScalaModule, chiselIotesters2ScalaModule, Nil)
   | setScalaModuleSourceDirs ("src/test/scala", Nil)
   | setScalaModuleResourceDirs ("src/test/resources", Nil)
   | setScalaModuleScalacOptions ("-Xsource:2.11", Nil)
