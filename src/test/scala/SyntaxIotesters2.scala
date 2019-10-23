@@ -23,6 +23,11 @@ class NullTester2 extends FreeSpec with ChiselScalatestTester {
       dut.io.b.poke(2.U)
       dut.clock.step()
       dut.io.c.expect(0.U)
+
+      dut.io.a.poke(7.U)
+      dut.io.b.poke(5.U)
+      dut.clock.step()
+      dut.io.c.expect(24.U)
     }
   }
 }
