@@ -1,42 +1,16 @@
+def version = makeScalaVersion 12 8
 
 global def exampleChiselWake =
-  makeScalaModuleFromJSON here "example-chisel-wake"
-  | setScalaModuleDeps (chisel3ScalaModule, Nil)
+  makeScalaModule "example-chisel-wake" here version
+  | editScalaModuleDeps (chisel3ScalaModule, _)
   | setScalaModuleScalacOptions ("-Xsource:2.11", Nil)
 
 global def testExampleChiselWake =
-  makeScalaModuleFromJSON here "test-example-chisel-wake"
-  | setScalaModuleDeps (exampleChiselWake, chiselIotestersScalaModule, chiselIotesters2ScalaModule, Nil)
-  | setScalaModuleSourceDirs ("src/test/scala", Nil)
-  | setScalaModuleResourceDirs ("src/test/resources", Nil)
-  | setScalaModuleScalacOptions ("-Xsource:2.11", Nil)
+  makeScalaTestModule "test-example-chisel-wake" here version
+  | editScalaModuleDeps (exampleChiselWake, _)
 
-def reportScalaTest report job =
-  def printReport paths =
-    def reports = paths | filter (_.getPathName ==~ report)
-    match reports
-      report, Nil =
-        def res = read report
-        def _ = rmap println res
-        Pass "Success!"
-      # Nil suggests that ScalaTest didn't run
-      Nil = match paths
-        bad, Nil if bad.getPathError.isSome =
-          match bad.getPathError
-            Some err = Fail err
-            None     = job.getJobStderr
-        x = Fail "Something has gone horribly wrong".makeError
-      x           = Fail "Ran Scala Test expected exactly 1 report, got {format x}".makeError
+global def runTestDefault _ =
+  runScalaTestSuite testExampleChiselWake "syntax.NullTester" "test.report.txt"
 
-  match job.getJobOutputs
-    Nil = job.getJobStderr
-    output, Nil if output.getPathError.isSome =
-      printReport job.getJobFailedOutputs
-      | rmapPass (\_ Fail "ScalaTest failed!".makeError)
-    one, Nil = panic "bad"
-    outputs = printReport outputs
-
-global def runTest tester =
-  def report = "test.report.txt"
-  runJava testExampleChiselWake.scalaModuleClasspath "org.scalatest.tools.Runner" ("-f", report, "-s", tester, Nil) Nil
-  | reportScalaTest report
+global def runTestDefault2 _ =
+  runScalaTestSuite testExampleChiselWake "syntax.NullTester2" "test2.report.txt"
