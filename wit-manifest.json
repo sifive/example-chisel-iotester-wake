@@ -10,7 +10,7 @@
         "source": "git@github.com:sifive/api-chisel3-sifive.git"
     },
     {
-        "commit": "f3903af1230e1f1fff518efe6c8da248f36c86f7",
+        "commit": "a1ef9fc1099a131d9f842df84e68168ddcc8af9c",
         "name": "api-chisel3testers-sifive",
         "source": "git@github.com:sifive/api-chisel3testers-sifive.git"
     },
