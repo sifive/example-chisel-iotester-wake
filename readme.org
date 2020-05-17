@@ -19,16 +19,9 @@ wget https://1288-148184315-gh.circle-artifacts.com/0/tmp/workspace/ubuntu_18_04
 sudo dpkg -i wake_0.15.0-1_amd64.deb
 #+END_SRC
 
-** Setup environment variables
+** Get the workspace
 #+BEGIN_SRC shell
-export WAKE_PATH=</path/to/java>:<path/to/protoc>
-export PATH=</path/to/wit>:</path/to/java>:$PATH
-#+END_SRC
-
-
-** Get the repo
-#+BEGIN_SRC shell
-wit init example-chisel-iotester-wake -a git@github.com:sifive/example-chisel-iotester-wake.git
+wit init workspace -a git@github.com:sifive/example-chisel-iotester-wake.git::jar
 #+END_SRC
 
 ** Init the wake project
@@ -40,11 +33,4 @@ wake --init .
 ** Run the project
 #+BEGIN_SRC shell
 wake all
-#+END_SRC
-
-** Try different error types
-uncomment lines in src/test/Syntax.scala and check different results.
-#+BEGIN_SRC scala
-//  assert(0)
-//  assert(false)
 #+END_SRC

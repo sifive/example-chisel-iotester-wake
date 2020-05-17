@@ -19,7 +19,7 @@ class NullUnitTester(mm: Null) extends PeekPokeTester(mm) {
 
 class NullTester extends ChiselFlatSpec {
   "Basic test using Driver.execute" should "be used as an alternative way to run specification" in {
-    iotesters.Driver.execute(Array(), () => new Null) {
+    iotesters.Driver.execute(Array("-td", "test"), () => new Null) {
       c => new NullUnitTester(c)
     } should be (true)
   }

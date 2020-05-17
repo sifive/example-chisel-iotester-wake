@@ -9,6 +9,8 @@ on:
     branches: [ master, jar, src ]
   pull_request:
     branches: [ master, jar, src ]
+  watch:
+    types: [ started ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -16,6 +18,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    if: github.actor == github.event.repository.owner.login
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,7 +30,7 @@ jobs:
         command: init
         arguments: |
           workspace
-          -a git@github.com:sifive/example-chisel-iotester-wake.git::jar
+          -a git@github.com:davidmlw/example-chisel-iotester-wake.git::jar
         force_github_https: true
 
     - name: Build workspace
