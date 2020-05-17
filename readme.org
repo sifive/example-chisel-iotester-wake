@@ -6,15 +6,6 @@
 #+STARTUP: indent
 
 
-* SBT flow
-
-+ This is simple sbt project for Chisel3, which can be run as:
-#+BEGIN_SRC shell
-sbt 'testOnly Syntax.NullTester'
-#+END_SRC
-
-So how can we just run this in Wake flow?
-
 * Wake flow
 ** Install Wit
 #+BEGIN_SRC shell
