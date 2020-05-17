@@ -39,7 +39,7 @@ wake --init .
 
 ** Run the project
 #+BEGIN_SRC shell
-wake 'runScalaTest testExampleChiselWake "syntax.NullTester"'
+wake all
 #+END_SRC
 
 ** Try different error types
