@@ -7,10 +7,12 @@ global def exampleChiselWake =
 
 global def testExampleChiselWake =
   makeScalaTestModule "test-example-chisel-wake" here version
-  | editScalaModuleDeps (exampleChiselWake, _)
+  | editScalaModuleDeps (exampleChiselWake, treadleScalaModule, firrtlInterpreterScalaModule, chiselTestersScalaModule, chiselTesters2ScalaModule, _)
 
 global def runTestDefault _ =
-  runScalaTestSuite testExampleChiselWake "syntax.NullTester" "test.report.txt"
+  makeScalaTestPlan testExampleChiselWake "syntax.NullTester"
+  | runScalaTest
 
 global def runTestDefault2 _ =
-  runScalaTestSuite testExampleChiselWake "syntax.NullTester2" "test2.report.txt"
+  makeScalaTestPlan testExampleChiselWake "syntax.NullTester2"
+  | runScalaTest

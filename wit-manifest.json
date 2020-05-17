@@ -1,11 +1,11 @@
 [
     {
-        "commit": "fc7ee0ff9f59b3ef2c9c2187172ba71a13747273",
+        "commit": "jar-3.3.0",
         "name": "api-chisel3-sifive",
-        "source": "git@github.com:sifive/api-chisel3-sifive.git"
+        "source": "git@github.com:davidmlw/api-chisel3-sifive.git"
     },
     {
-        "commit": "caea0b6ef6f03dfef57f5e798168aa34de7bd2a1",
+        "commit": "jar-1.2.0",
         "name": "api-chisel3testers-sifive",
         "source": "git@github.com:sifive/api-chisel3testers-sifive.git"
     }
