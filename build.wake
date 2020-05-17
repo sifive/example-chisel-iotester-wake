@@ -16,3 +16,8 @@ global def runTestDefault _ =
 global def runTestDefault2 _ =
   makeScalaTestPlan testExampleChiselWake "syntax.NullTester2"
   | runScalaTest
+
+global def all args =
+  runTestDefault Unit | getJobOutput | rmap println,
+  runTestDefault2 Unit | getJobOutput | rmap println,
+  Nil
