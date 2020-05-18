@@ -34,3 +34,5 @@ wake --init .
 #+BEGIN_SRC shell
 wake all
 #+END_SRC
+
+** Run from github
